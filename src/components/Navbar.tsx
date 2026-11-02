@@ -2,7 +2,7 @@
 import { CalendarCheck, Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-scroll";
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, motion, type Variants } from "motion/react";
 
 const items = [
   { label: "USLUGE", to: "Usluge" },
@@ -13,20 +13,20 @@ const items = [
 ];
 
 /* ---------- animation variants ---------- */
-const ease = [0.76, 0, 0.24, 1] as const;
+const ease: [number, number, number, number] = [0.76, 0, 0.24, 1];
 
 // desktop: navbar children appear one after another
-const barContainer = {
+const barContainer: Variants = {
   hidden: {},
   show: { transition: { staggerChildren: 0.08, delayChildren: 0.2 } },
 };
-const barItem = {
+const barItem: Variants = {
   hidden: { opacity: 0, y: -12 },
   show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
 };
 
 // mobile: panel slides down, links slide in one by one
-const panel = {
+const panel: Variants = {
   closed: { y: "-100%", transition: { duration: 0.4, ease } },
   open: {
     y: 0,
@@ -38,11 +38,10 @@ const panel = {
     },
   },
 };
-const mobileItem = {
+const mobileItem: Variants = {
   closed: { opacity: 0, x: -24 },
   open: { opacity: 1, x: 0, transition: { duration: 0.4, ease: "easeOut" } },
 };
-
 function MobileMenu() {
   const [menu, setMenu] = useState(false);
 
