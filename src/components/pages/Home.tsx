@@ -18,7 +18,7 @@ const wordUp = {
   show: { y: 0, transition: { duration: 0.8, ease } },
 };
 
-const headline = ["Sadržaj", "koji", "vas", "čini", "vidljivim"];
+const headline = ["Sadržaj", "koji", "vas", "čini", "autentičnim"];
 
 function DecorativeCircle() {
   return (

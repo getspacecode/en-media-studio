@@ -1,4 +1,5 @@
 import HomePage from "@/components/pages/Home";
+import Rezultati from "@/components/pages/Rezultati";
 import Usluge from "@/components/pages/Usluge";
 
 export default function Home() {
@@ -6,6 +7,7 @@ export default function Home() {
     <main>
       <HomePage />
       <Usluge />
+      <Rezultati />
     </main>
   );
 }

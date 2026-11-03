@@ -99,7 +99,7 @@ function MobileMenu() {
                         smooth
                         duration={500}
                         onClick={() => setMenu(false)}
-                        className="group cursor-pointer flex items-center justify-between text-xl font-medium tracking-[0.2em] text-muted hover:text-white transition-colors"
+                        className="group cursor-pointer flex items-center justify-between text-xl font-medium tracking-button text-muted hover:text-white transition-colors"
                       >
                         <span>{item.label}</span>
                         <span className="text-gold opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
