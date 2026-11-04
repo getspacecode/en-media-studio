@@ -5,21 +5,22 @@ const ease: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
 const rezultati = [
   {
-    brand: "BREND 01",
-    value: "3.4×",
-    desc: "Povećanje angažmana za 4 meseca.",
-    gold: false,
-  },
-  {
-    brand: "BREND 02",
-    value: "+120K",
-    desc: "Pregleda dobijenih zahvaljujuci poslovanju.",
+    brand: "RAST DOSEGA",
+    value: "2000%",
+    desc: "Prosečan rast reach-a klijenata od +2.000% do +2.500%.",
     gold: true,
   },
   {
-    brand: "BREND 03",
-    value: "−38%",
-    desc: "Niža cena po upitu. Sed do eiusmod tempor incididunt.",
+    brand: "DNEVNI BUDŽET",
+    value: "1 kafa",
+    desc: "Cena jedne kafe dnevno za precizno optimizovane oglase.",
+    gold: false,
+  },
+
+  {
+    brand: "CENA PO POSETI",
+    value: "Niža",
+    desc: "Drastično smanjenje troškova po poseti profila.",
     gold: false,
   },
 ];

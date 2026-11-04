@@ -7,24 +7,24 @@ const ease: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
 const pitanja = [
   {
-    q: "Lorem ipsum dolor sit amet consectetur?",
-    a: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
+    q: "Šta je zapravo faceless video marketing i da li moram da se snimam?",
+    a: "Ne, uopšte ne morate da se snimate. EN Media Studio radi faceless koncept – vi nam pošaljete materijal ili snimke, a mi se kompletno bavimo profesionalnom montažom, efektima i obradom kako bi vaš profil izgledao vrhunski i privlačno.",
   },
   {
-    q: "Ut enim ad minim veniam quis nostrud?",
-    a: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+    q: "Koliko mi je vremena potrebno da izdvojim za saradnju?",
+    a: "Minimalno. Vaše je samo da nam dostavite sirove snimke ili materijale po dogovoru, a mi preuzimamo kompletnu realizaciju, montažu, optimizaciju opisa, ključnih reči i hashtagova.",
   },
   {
-    q: "Duis aute irure dolor in reprehenderit?",
-    a: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore.",
+    q: "Da li se odmah vide rezultati i da li su reklame neophodne?",
+    a: "Organski rast danas ide prilično sporo. Uz pametno podešene kampanje i optimizovan budžet (za cenu jedne kafe dnevno), dobijate veliki reach i prave klijente, bez bacanja stotina evra na neisplative oglase.",
   },
   {
-    q: "Excepteur sint occaecat cupidatat?",
-    a: "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
+    q: "Kako funkcioniše odabir paketa i početak saradnje?",
+    a: "Možete izabrati jedan od naših paketa (Start, Rast ili Autoritet) u zavisnosti od toga koliko vam je objava mesečno potrebno. Nakon toga se dogovaramo oko detalja i kreiramo sadržaj koji gradi vaš autoritet i donosi upite u DM.",
   },
   {
-    q: "Sed ut perspiciatis unde omnis iste?",
-    a: "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt.",
+    q: "Kako da vas kontaktiram i poručim uslugu?",
+    a: "Najlakše je da pregledate pakete na sajtu i pošaljete nam direktnu poruku u DM na Instagramu (@en_media_studio) kako bismo odmah dogovorili saradnju i postavili sistem koji radi za vaš biznis.",
   },
 ];
 

@@ -10,6 +10,7 @@ const items = [
   { label: "PROCES", to: "Proces" },
   { label: "PAKETI", to: "Paketi" },
   { label: "FAQ", to: "Faq" },
+  { label: "KONTAKT", to: "Kontakt" },
 ];
 
 /* ---------- animation variants ---------- */
@@ -121,7 +122,7 @@ function MobileMenu() {
                     onClick={() => setMenu(false)}
                     className="flex cursor-pointer hover:bg-gold/80 transition-all duration-300 items-center justify-between w-full bg-gold text-bg p-4 tracking-widest font-semibold"
                   >
-                    <span>ZAKAŽI TERMIN</span>
+                    <span>KRENIMO ZAJEDNO</span>
                     <CalendarCheck size={22} />
                   </Link>
                 </motion.div>
@@ -156,7 +157,6 @@ export default function Navbar() {
         />
         <h1>MEDIA STUDIO</h1>
       </motion.div>
-
       {/* desktop links */}
       <div className="hidden lg:flex gap-12 items-center justify-center text-muted">
         {items.map((item) => (
@@ -178,18 +178,18 @@ export default function Navbar() {
           </motion.div>
         ))}
       </div>
-
       <MobileMenu />
-
-      {/* calendar button */}
-      <motion.button
-        variants={barItem}
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.92 }}
-        className="hidden lg:flex p-1.5 items-end transition-colors duration-300 justify-center text-muted hover:text-white border-b-2 border-transparent hover:border-gold font-semibold tracking-wider"
-      >
-        <CalendarCheck size={30} />
-      </motion.button>
+      {/* calendar button */}{" "}
+      <Link to="Kontakt" smooth duration={500}>
+        <motion.button
+          variants={barItem}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.92 }}
+          className="hidden lg:flex p-1.5 items-end transition-colors duration-300 justify-center text-muted hover:text-white border-b-2 border-transparent hover:border-gold font-semibold tracking-wider"
+        >
+          <CalendarCheck size={30} />
+        </motion.button>{" "}
+      </Link>
     </motion.nav>
   );
 }

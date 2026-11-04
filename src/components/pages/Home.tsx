@@ -1,5 +1,6 @@
 "use client";
 import { MotionConfig, motion } from "motion/react";
+import { Link } from "react-scroll";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -74,7 +75,7 @@ export default function HomePage() {
               {headline.map((word, i) => (
                 <span
                   key={word}
-                  className="-mb-[0.12em] mr-[0.25em] inline-block overflow-hidden pb-[0.12em] align-bottom"
+                  className={`mb-[-0.12em] ${word == "autentičnim" ? "font-script" : ""} mr-[0.25em] inline-block overflow-hidden pb-[0.12em] align-bottom`}
                 >
                   <motion.span
                     variants={wordUp}
@@ -116,12 +117,19 @@ export default function HomePage() {
             variants={fadeUp}
             className="flex flex-col gap-6 sm:flex-row sm:items-center sm:gap-12"
           >
-            <motion.button
-              whileTap={{ scale: 0.96 }}
-              className="border border-gold px-8 py-4 text-sm font-normal tracking-widest text-gold transition-colors duration-300 hover:bg-gold hover:text-bg"
+            <Link
+              to="Kontakt"
+              className="flex justify-center"
+              smooth
+              duration={500}
             >
-              POKRENITE PROJEKAT
-            </motion.button>
+              <motion.button
+                whileTap={{ scale: 0.96 }}
+                className="border border-gold px-8 py-4 text-sm font-normal tracking-widest text-gold transition-colors duration-300 hover:bg-gold hover:text-bg"
+              >
+                <span className="block w-full">POKRENITE PROJEKAT </span>
+              </motion.button>
+            </Link>
             <motion.button
               whileTap={{ scale: 0.96 }}
               className="w-fit self-center border-b border-gold/55 pb-1 text-sm tracking-widest transition-colors duration-300 hover:text-gold"

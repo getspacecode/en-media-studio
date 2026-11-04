@@ -1,4 +1,5 @@
 "use client";
+
 import { MotionConfig, motion, type Variants } from "motion/react";
 
 const ease: [number, number, number, number] = [0.22, 1, 0.36, 1];
@@ -6,29 +7,28 @@ const ease: [number, number, number, number] = [0.22, 1, 0.36, 1];
 const koraci = [
   {
     id: "01",
-    title: "Poziv",
-    desc: "Upoznajemo vas i vaše ciljeve. Lorem ipsum dolor sit amet.",
+    title: "Analiza i strategija",
+    desc: "Proučavamo vaš biznis, ciljnu publiku i trenutno stanje profila kako bismo definisali strategiju prilagođenu vašim ciljevima.",
   },
   {
     id: "02",
-    title: "Strategija",
-    desc: "Analiza i plan sadržaja za prvi mesec. Consectetur adipiscing elit.",
+    title: "Kreiranje sadržaja",
+    desc: "Produkujemo i montiramo profesionalne faceless video zapise i karusele prilagođene vašem brendu. Vi ne morate da se snimate.",
   },
   {
     id: "03",
-    title: "Produkcija",
-    desc: "Pravimo i objavljujemo sadržaj, vodimo kampanje. Sed do eiusmod.",
+    title: "Optimizacija i lansiranje",
+    desc: "Pripremamo SEO opise, ključne reči i hashtagove, a po potrebi pokrećemo pametno podešene kampanje sa optimizovanim budžetom.",
   },
   {
     id: "04",
-    title: "Izveštaj",
-    desc: "Mesečni pregled rezultata i sledeći koraci. Ut labore et dolore.",
+    title: "Rezultati i rast",
+    desc: "Gradimo autoritet vašeg brenda, privlačimo novu publiku i usmeravamo potencijalne klijente direktno u vaš DM.",
   },
 ];
 
 const heading = ["Jednostavno,", "u", "četiri", "koraka."];
 
-/* ---------- variants ---------- */
 const stagger: Variants = {
   hidden: {},
   show: { transition: { staggerChildren: 0.12, delayChildren: 0.1 } },
@@ -39,7 +39,6 @@ const fadeUp: Variants = {
   show: { opacity: 1, y: 0, transition: { duration: 0.7, ease } },
 };
 
-// reči i brojevi izlaze iz maske
 const maskUp: Variants = {
   hidden: { y: "110%" },
   show: { y: 0, transition: { duration: 0.9, ease } },
@@ -68,7 +67,9 @@ export default function Proces() {
           <motion.p
             variants={fadeUp}
             className="text-xs font-normal tracking-eyebrow text-gold"
-          ></motion.p>
+          >
+            NAŠ PROCES RADA
+          </motion.p>
 
           <motion.h2
             variants={stagger}
@@ -87,7 +88,7 @@ export default function Proces() {
           </motion.h2>
         </motion.div>
 
-        {/* LINIJA + KORACI */}
+        {/* LINE + STEPS */}
         <motion.div
           variants={stagger}
           initial="hidden"
@@ -98,6 +99,7 @@ export default function Proces() {
             variants={drawLine}
             className="h-px origin-left bg-line"
           />
+
           <div className="lg:grid lg:grid-cols-4">
             {koraci.map((k) => (
               <motion.article
@@ -105,7 +107,7 @@ export default function Proces() {
                 variants={fadeUp}
                 className="flex gap-6 border-b border-line py-8 transition-colors duration-300 hover:bg-beige/2 lg:flex-col lg:gap-0 lg:border-b-0 lg:border-l lg:px-8 lg:py-12 lg:first:border-l-0 lg:first:pl-0 lg:last:pr-0"
               >
-                {/* broj */}
+                {/* BROJ */}
                 <div className="w-16 shrink-0 overflow-hidden pb-2 lg:w-auto">
                   <motion.p
                     variants={maskUp}
@@ -119,13 +121,14 @@ export default function Proces() {
                   <h3 className="text-2xl font-light tracking-tight text-beige lg:mt-14 lg:text-3xl">
                     {k.title}
                   </h3>
+
                   <p className="mt-3 max-w-60 text-sm text-muted lg:text-base">
                     {k.desc}
                   </p>
                 </div>
               </motion.article>
             ))}
-          </div>{" "}
+          </div>
         </motion.div>
       </section>
     </MotionConfig>

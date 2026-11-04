@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
-
-import { Inter } from "next/font/google";
+import { Inter, Parisienne } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
 
@@ -9,6 +8,11 @@ const font = Inter({
   subsets: ["latin", "latin-ext"],
   axes: ["opsz"],
   variable: "--font-inter",
+});
+const scriptFont = Parisienne({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-parisienne",
 });
 const title = "EN Media Studio | Marketing agencija";
 const description =
@@ -50,7 +54,10 @@ const jsonLd = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${font.className} h-full antialiased`}>
+    <html
+      lang="sr"
+      className={`${font.variable} ${scriptFont.variable} h-full antialiased`}
+    >
       <body className="min-h-full flex flex-col">
         <Navbar />
         {children}

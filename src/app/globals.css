@@ -2,15 +2,16 @@
 
 @theme {
   /* Colors */
-  --color-bg: #0b0a09; /* page background */
-  --color-beige: #e9dfc8; /* main text, headings */
-  --color-muted: #8f8776; /* secondary text */
-  --color-gold: #c6a15b; /* accent: eyebrows, numbers, buttons */
-  --color-gold-soft: rgb(198 161 91 / 0.55); /* thin gold borders, underlines */
-  --color-line: rgb(233 223 200 / 0.14); /* all hairline dividers */
+  --color-bg: #0b0a09;
+  --color-beige: #e9dfc8;
+  --color-muted: #8f8776;
+  --color-gold: #c6a15b;
+  --color-gold-soft: rgb(198 161 91 / 0.55);
+  --color-line: rgb(233 223 200 / 0.14);
 
   /* Fonts */
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-script: var(--font-parisienne), cursive;
 
   /* Letter spacing */
   --tracking-heading: -0.035em;
@@ -24,6 +25,7 @@ body {
   font-weight: 300;
   font-optical-sizing: auto;
 }
+
 button {
   @apply cursor-pointer;
 }
