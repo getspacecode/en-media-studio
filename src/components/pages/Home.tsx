@@ -44,7 +44,7 @@ function DecorativeCircle() {
 const stats = [
   { value: "120+", label: "PROJEKATA" },
   { value: "45", label: "ZADOVOLJNIH" },
-  { value: "4 god.", label: "SA VAMA" },
+  { value: "1 god.", label: "SA VAMA" },
 ];
 
 export default function HomePage() {

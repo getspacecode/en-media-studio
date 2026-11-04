@@ -13,17 +13,17 @@ const usluge = [
   {
     id: "02",
     title: "Video & Reels",
-    desc: "Scenario, snimanje i montaža kratkih formata za vaše mreže.",
+    desc: "Oglasavanje vasih mreza putem reels videa.",
   },
   {
     id: "03",
-    title: "Plaćeno oglašavanje",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo vitae enim r",
+    title: "Brending & identitet",
+    desc: "Profesionalno unapredjivanje vaseg brenda i identiteta.",
   },
   {
     id: "04",
-    title: "Brending & identitet",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo vitae enim r",
+    title: "Izrada veb-sajtova",
+    desc: "Potpuna izrada interaktivnih veb-sajtova. SEO i mogucnost rada nad bazom podataka.",
   },
 ];
 

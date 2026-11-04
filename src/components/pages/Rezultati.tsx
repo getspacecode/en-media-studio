@@ -7,13 +7,13 @@ const rezultati = [
   {
     brand: "BREND 01",
     value: "3.4×",
-    desc: "Povećanje angažmana za 4 meseca. Lorem ipsum dolor sit amet.",
+    desc: "Povećanje angažmana za 4 meseca.",
     gold: false,
   },
   {
     brand: "BREND 02",
     value: "+120K",
-    desc: "Novih pratilaca organski. Consectetur adipiscing elit.",
+    desc: "Pregleda dobijenih zahvaljujuci poslovanju.",
     gold: true,
   },
   {
@@ -66,9 +66,7 @@ export default function Rezultati() {
           <motion.p
             variants={fadeUp}
             className="text-xs font-normal tracking-eyebrow text-gold"
-          >
-            02 — REZULTATI
-          </motion.p>
+          ></motion.p>
 
           <motion.h2
             variants={stagger}
@@ -153,14 +151,8 @@ export default function Rezultati() {
                 variants={fadeUp}
                 className="max-w-4xl text-2xl font-extralight leading-snug sm:text-3xl lg:text-5xl"
               >
-                „Lorem ipsum dolor sit amet, consectetur adipiscing elit“
+                „Bitna je estetika a tvoja je jako lepa i suptilna“
               </motion.blockquote>
-
-              <motion.p variants={fadeUp} className="mt-8 text-sm text-muted">
-                <span className="text-beige">Ime Prezime</span>
-                <span className="mx-3">·</span>
-                Vlasnik, Brend 01
-              </motion.p>
             </div>
           </div>
         </motion.div>
