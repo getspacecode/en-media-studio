@@ -1,7 +1,8 @@
 "use client";
 import { MotionConfig, motion } from "motion/react";
+import Image from "next/image";
 import { Link } from "react-scroll";
-
+import hero from "../../../public/heromobile.png";
 const ease = [0.22, 1, 0.36, 1] as const;
 
 const stagger = {
@@ -53,6 +54,22 @@ export default function HomePage() {
     <MotionConfig reducedMotion="user">
       <main className="flex flex-col overflow-x-hidden pb-16">
         <section className="relative px-6 pt-32 pb-12 lg:px-32 lg:pt-48">
+          {/* Mobile decorative image */}
+          <motion.div
+            initial={{ opacity: 0, scale: 1.08 }}
+            animate={{ opacity: 0.55, scale: 1 }}
+            transition={{ duration: 1.4, ease, delay: 0.2 }}
+            className="pointer-events-none absolute inset-0 lg:hidden"
+          >
+            <Image
+              src={hero}
+              alt=""
+              className="size-full object-cover object-center"
+            />
+
+            {/* Fade image into page background */}
+            <div className="absolute inset-0 bg-gradient-to-b from-bg/10 via-bg/30 to-bg" />
+          </motion.div>
           <DecorativeCircle />
 
           <motion.div
