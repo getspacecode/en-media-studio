@@ -74,7 +74,7 @@ export default function Kontakt() {
 
             <motion.h2
               variants={stagger}
-              className="mt-8 max-w-4xl text-5xl font-extralight leading-[1.05] tracking-heading sm:text-6xl lg:text-8xl"
+              className="mt-8 max-w-4xl font-script text-5xl font-extralight leading-[1.05] tracking-heading sm:text-6xl lg:text-8xl"
             >
               <span className="block overflow-hidden pb-[0.08em]">
                 <motion.span variants={maskUp} className="block">

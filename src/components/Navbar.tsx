@@ -5,6 +5,7 @@ import { Link } from "react-scroll";
 import { AnimatePresence, motion, type Variants } from "motion/react";
 
 const items = [
+  { label: "O MENI", to: "OMeni" },
   { label: "USLUGE", to: "Usluge" },
   { label: "REZULTATI", to: "Rezultati" },
   { label: "PROCES", to: "Proces" },
@@ -188,7 +189,7 @@ export default function Navbar() {
           className="hidden lg:flex p-1.5 items-end transition-colors duration-300 justify-center text-muted hover:text-white border-b-2 border-transparent hover:border-gold font-semibold tracking-wider"
         >
           <CalendarCheck size={30} />
-        </motion.button>{" "}
+        </motion.button>
       </Link>
     </motion.nav>
   );

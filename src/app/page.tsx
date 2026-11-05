@@ -1,3 +1,4 @@
+import OMeni from "@/components/pages/About";
 import Faq from "@/components/pages/FAQ";
 import HomePage from "@/components/pages/Home";
 import Kontakt from "@/components/pages/Kontakt";
@@ -10,6 +11,7 @@ export default function Home() {
   return (
     <main>
       <HomePage />
+      <OMeni />
       <Usluge />
       <Rezultati />
       <Proces />

@@ -1,15 +1,16 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
-import { Inter, Parisienne } from "next/font/google";
+import { Inter, Play, Playfair_Display } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
+import Footer from "@/components/Footer";
 
 const font = Inter({
   subsets: ["latin", "latin-ext"],
   axes: ["opsz"],
   variable: "--font-inter",
 });
-const scriptFont = Parisienne({
+const scriptFont = Playfair_Display({
   subsets: ["latin"],
   weight: "400",
   variable: "--font-parisienne",
@@ -61,6 +62,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full flex flex-col">
         <Navbar />
         {children}
+        <Footer />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

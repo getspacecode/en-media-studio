@@ -1,6 +1,35 @@
 "use client";
-import { MotionConfig, motion, type Variants } from "motion/react";
+import Image, { type StaticImageData } from "next/image";
+import { ArrowUpRight, X } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import {
+  AnimatePresence,
+  MotionConfig,
+  motion,
+  type Variants,
+} from "motion/react";
 
+// zameni putanjama do svojih screenshotova
+import poruka1 from "../../../public/poruka-1.jpg";
+import poruka2 from "../../../public/poruka-2.jpg";
+import poruka3 from "../../../public/poruka-3.jpg";
+
+type Poruka = { text: string; image: StaticImageData };
+
+const poruke: Poruka[] = [
+  {
+    text: "Bitna je estetika a tvoja je jako lepa i suptilna",
+    image: poruka1,
+  },
+  {
+    text: "E sad baš krećem na posao i baš si me obradovala i digla da odem i izdržim ceo dan",
+    image: poruka2,
+  },
+  {
+    text: "Tražila mi je jedna ženica ko mi radi profil, prosledila sam joj broj... ona ima knjigovodstvenu agenciju",
+    image: poruka3,
+  },
+];
 const ease: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
 const rezultati = [
@@ -48,8 +77,72 @@ const drawLine: Variants = {
   hidden: { scaleX: 0 },
   show: { scaleX: 1, transition: { duration: 1.2, ease } },
 };
+function PorukaModal({
+  poruka,
+  onClose,
+}: {
+  poruka: Poruka;
+  onClose: () => void;
+}) {
+  const closeRef = useRef<HTMLButtonElement>(null);
 
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    document.addEventListener("keydown", onKey);
+
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden"; // stranica se ne skroluje iza modala
+    closeRef.current?.focus();
+
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prevOverflow;
+    };
+  }, [onClose]);
+
+  return (
+    <motion.div
+      role="dialog"
+      aria-modal="true"
+      aria-label="Poruka klijenta"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.3 }}
+      onClick={onClose}
+      className="fixed inset-0 z-100 flex items-center justify-center bg-bg/90 p-4 backdrop-blur-sm sm:p-8"
+    >
+      <button
+        ref={closeRef}
+        onClick={onClose}
+        aria-label="Zatvori"
+        className="absolute right-4 top-4 cursor-pointer text-muted transition-colors duration-300 hover:text-gold sm:right-8 sm:top-8"
+      >
+        <X size={28} />
+      </button>
+
+      <motion.div
+        initial={{ opacity: 0, y: 40, scale: 0.96 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        exit={{ opacity: 0, y: 20, scale: 0.97 }}
+        transition={{ duration: 0.4, ease }}
+        onClick={(e) => e.stopPropagation()} // klik na sliku ne zatvara modal
+        className="max-h-full max-w-full overflow-auto border border-line bg-bg p-2 sm:p-3"
+      >
+        <Image
+          src={poruka.image}
+          alt={`Screenshot poruke klijenta: „${poruka.text}“`}
+          sizes="(min-width: 1024px) 480px, 90vw"
+          className="h-auto max-h-[80vh] w-auto max-w-full"
+        />
+      </motion.div>
+    </motion.div>
+  );
+}
 export default function Rezultati() {
+  const [selected, setSelected] = useState<Poruka | null>(null);
   return (
     <MotionConfig reducedMotion="user">
       <main
@@ -76,7 +169,7 @@ export default function Rezultati() {
             {heading.map((word) => (
               <span
                 key={word}
-                className="mb-[-0.12em] mr-[0.25em] inline-block overflow-hidden pb-[0.12em] align-bottom"
+                className="mb-[-0.12em] font-script mr-[0.25em] inline-block overflow-hidden pb-[0.12em] align-bottom"
               >
                 <motion.span variants={maskUp} className="inline-block">
                   {word}
@@ -126,12 +219,12 @@ export default function Rezultati() {
           </div>
         </motion.div>
 
-        {/* QUOTE */}
+        {/* KLIJENTI KAŽU */}
         <motion.div
           variants={stagger}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, amount: 0.4 }}
+          viewport={{ once: true, amount: 0.2 }}
           className="mt-8 md:mt-16 lg:mt-24"
         >
           <motion.div
@@ -148,15 +241,39 @@ export default function Rezultati() {
             </motion.p>
 
             <div>
-              <motion.blockquote
-                variants={fadeUp}
-                className="max-w-4xl text-2xl font-extralight leading-snug sm:text-3xl lg:text-5xl"
-              >
-                „Bitna je estetika a tvoja je jako lepa i suptilna“
-              </motion.blockquote>
+              {poruke.map((p) => (
+                <motion.div
+                  key={p.text}
+                  variants={fadeUp}
+                  className="flex flex-col gap-6 border-t border-line py-8 first:border-t-0 first:pt-0 sm:flex-row sm:items-center sm:justify-between sm:gap-10"
+                >
+                  <blockquote className="max-w-2xl text-xl font-extralight leading-snug sm:text-2xl lg:text-3xl">
+                    „{p.text}“
+                  </blockquote>
+
+                  <button
+                    onClick={() => setSelected(p)}
+                    aria-haspopup="dialog"
+                    className="group flex w-fit shrink-0 cursor-pointer items-center gap-2 border-b border-gold/55 pb-1 text-xs tracking-eyebrow transition-colors duration-300 hover:text-gold"
+                  >
+                    POGLEDAJ PORUKU
+                    <ArrowUpRight
+                      size={16}
+                      className="text-gold transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                    />
+                  </button>
+                </motion.div>
+              ))}
             </div>
           </div>
         </motion.div>
+
+        {/* MODAL: mora biti van motion wrappera iznad, da `fixed` radi kako treba */}
+        <AnimatePresence>
+          {selected && (
+            <PorukaModal poruka={selected} onClose={() => setSelected(null)} />
+          )}
+        </AnimatePresence>
       </main>
     </MotionConfig>
   );

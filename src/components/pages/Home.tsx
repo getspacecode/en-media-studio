@@ -44,7 +44,7 @@ function DecorativeCircle() {
 
 const stats = [
   { value: "120+", label: "PROJEKATA" },
-  { value: "45", label: "ZADOVOLJNIH" },
+  { value: "45+", label: "ZADOVOLJNIH" },
   { value: "1 god.", label: "SA VAMA" },
 ];
 
@@ -75,7 +75,7 @@ export default function HomePage() {
               {headline.map((word, i) => (
                 <span
                   key={word}
-                  className={`mb-[-0.12em] ${word == "autentičnim" ? "font-script" : ""} mr-[0.25em] inline-block overflow-hidden pb-[0.12em] align-bottom`}
+                  className={`mb-[-0.12em] font-script mr-[0.25em] inline-block overflow-hidden pb-[0.12em] align-bottom`}
                 >
                   <motion.span
                     variants={wordUp}
@@ -107,10 +107,12 @@ export default function HomePage() {
         >
           <motion.p
             variants={fadeUp}
-            className="max-w-sm text-sm text-muted lg:text-base"
+            className="lg:max-w-2/3 text-sm text-muted lg:text-base"
           >
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores at
-            iusto ipsa asperiores, repellat ratione sint, totam velit, omnis
+            Prefinjena estetika i autentičan sadržaj uvek su u modi — oni ne
+            viču da prodaju, već tiho grade poverenje i dugoročnu vrednost. Kroz
+            sistem koji radi za Vas 24/7, privlačimo klijente koji prepoznaju
+            kvalitet i ostaju.
           </motion.p>
 
           <motion.div
@@ -130,12 +132,19 @@ export default function HomePage() {
                 <span className="block w-full">POKRENITE PROJEKAT </span>
               </motion.button>
             </Link>
-            <motion.button
-              whileTap={{ scale: 0.96 }}
-              className="w-fit self-center border-b border-gold/55 pb-1 text-sm tracking-widest transition-colors duration-300 hover:text-gold"
+            <Link
+              to="Rezultati"
+              className="flex justify-center"
+              smooth
+              duration={500}
             >
-              PROŠLI RADOVI
-            </motion.button>
+              <motion.button
+                whileTap={{ scale: 0.96 }}
+                className="w-fit self-center border-b border-gold/55 pb-1 text-sm tracking-widest transition-colors duration-300 hover:text-gold"
+              >
+                REZULTATI
+              </motion.button>
+            </Link>
           </motion.div>
         </motion.section>
 

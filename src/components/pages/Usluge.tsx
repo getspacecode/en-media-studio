@@ -68,7 +68,7 @@ export default function Usluge() {
           {heading.map((word) => (
             <span
               key={word}
-              className="-mb-[0.12em] mr-[0.25em] inline-block overflow-hidden pb-[0.12em] align-bottom"
+              className="-mb-[0.12em] font-script mr-[0.25em] inline-block overflow-hidden pb-[0.12em] align-bottom"
             >
               <motion.span variants={wordUp} className="inline-block">
                 {word}
