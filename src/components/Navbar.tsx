@@ -73,7 +73,6 @@ function MobileMenu() {
       <AnimatePresence>
         {menu && (
           <>
-            {/* dark backdrop, click closes the menu */}
             <motion.div
               key="backdrop"
               initial={{ opacity: 0 }}
@@ -90,10 +89,10 @@ function MobileMenu() {
               initial="closed"
               animate="open"
               exit="closed"
-              className="fixed left-0 top-0 z-50 w-full h-[65vh] bg-bg border-b border-gold/20 shadow-2xl"
+              className="fixed left-0 top-0 z-50 w-full h-max bg-bg border-b border-gold/20 shadow-2xl"
             >
               <div className="flex flex-col h-full px-8 pt-24 pb-8">
-                <div className="flex flex-col gap-6 flex-1">
+                <div className="flex flex-col mb-8 gap-6 flex-1">
                   {items.map((item) => (
                     <motion.div key={item.to} variants={mobileItem}>
                       <Link
