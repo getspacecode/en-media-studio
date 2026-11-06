@@ -4,6 +4,7 @@ import { Inter, Play, Playfair_Display } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
 import Footer from "@/components/Footer";
+import { Analytics } from "@vercel/analytics/next";
 
 const font = Inter({
   subsets: ["latin", "latin-ext"],
@@ -60,6 +61,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${font.variable} ${scriptFont.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <Analytics />
         <Navbar />
         {children}
         <Footer />
